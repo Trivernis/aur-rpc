@@ -2,7 +2,7 @@
 //! This crate offers abstractions over the rpcs provided by the
 //! Arch Linux User Repository (AUR).
 //!
-//! ## Retrieving user information
+//! ## Usage
 //! ```rust
 //! #[tokio::main]
 //! pub async fn main() {
