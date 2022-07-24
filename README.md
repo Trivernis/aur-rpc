@@ -1,4 +1,4 @@
-# aur-rpc
+# aur-rpc [![](https://img.shields.io/crates/v/aur-rpc)](https://crates.io/crates/aur-rpc) [![](https://img.shields.io/docsrs/aur-rpc)](https://docs.rs/aur-rpc)
 
 This crate is an async wrapper for calls to the Arch Linx User Repository.
 
