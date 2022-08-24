@@ -34,7 +34,9 @@ pub struct PackageInfo {
     pub metadata: PackageMetadata,
     pub keywords: Vec<String>,
     pub license: Vec<String>,
+    pub depends: Vec<String>,
     pub make_depends: Vec<String>,
+    pub opt_depends: Vec<String>,
 }
 
 impl From<PackageInfoRaw> for PackageInfo {
@@ -58,6 +60,8 @@ impl From<PackageInfoRaw> for PackageInfo {
             },
             keywords: info.keywords,
             license: info.license,
+            depends: info.depends,
+            opt_depends: info.opt_depends,
             make_depends: info.make_depends,
         }
     }
@@ -70,6 +74,11 @@ impl From<PackageInfoRaw> for PackageInfo {
 pub(crate) struct PackageInfoRaw {
     pub keywords: Vec<String>,
     pub license: Vec<String>,
+    #[serde(default)]
+    pub depends: Vec<String>,
+    #[serde(default)]
+    pub opt_depends: Vec<String>,
+    #[serde(default)]
     pub make_depends: Vec<String>,
     pub description: String,
     pub first_submitted: u64,
