@@ -19,3 +19,9 @@ async fn it_returns_information() {
     let packages = info(["yay"]).await.unwrap();
     assert!(packages.len() > 0)
 }
+
+#[tokio::test]
+async fn it_returns_information_2() {
+    let packages = info(["ros-melodic-desktop"]).await.unwrap();
+    assert!(packages.len() > 0)
+}

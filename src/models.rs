@@ -11,7 +11,7 @@ pub struct PackageMetadata {
     #[serde(alias = "ID")]
     pub id: u32,
     pub last_modified: u64,
-    pub maintainer: String,
+    pub maintainer: Option<String>,
     pub name: String,
     pub num_votes: u32,
     pub out_of_date: Option<u64>,
@@ -85,7 +85,7 @@ pub(crate) struct PackageInfoRaw {
     #[serde(alias = "ID")]
     pub id: u32,
     pub last_modified: u64,
-    pub maintainer: String,
+    pub maintainer: Option<String>,
     pub name: String,
     pub num_votes: u32,
     pub out_of_date: Option<u64>,

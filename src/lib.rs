@@ -9,7 +9,7 @@
 //!     let packages = aur_rpc::search("yay").await.unwrap();
 //!
 //!     for package in packages {
-//!         println!("{} - {}", package.name, package.maintainer);
+//!         println!("{} - {:?}", package.name, package.maintainer);
 //!     }
 //!     
 //!     let mut infos = aur_rpc::info(["mediarepo"]).await.unwrap();
