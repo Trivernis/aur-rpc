@@ -6,7 +6,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 pub struct PackageMetadata {
-    pub description: String,
+    pub description: Option<String>,
     pub first_submitted: u64,
     #[serde(alias = "ID")]
     pub id: u32,
@@ -80,7 +80,7 @@ pub(crate) struct PackageInfoRaw {
     pub opt_depends: Vec<String>,
     #[serde(default)]
     pub make_depends: Vec<String>,
-    pub description: String,
+    pub description: Option<String>,
     pub first_submitted: u64,
     #[serde(alias = "ID")]
     pub id: u32,
