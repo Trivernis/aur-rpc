@@ -37,6 +37,7 @@ pub struct PackageInfo {
     pub depends: Vec<String>,
     pub make_depends: Vec<String>,
     pub opt_depends: Vec<String>,
+    pub check_depends: Vec<String>
 }
 
 impl From<PackageInfoRaw> for PackageInfo {
@@ -63,6 +64,7 @@ impl From<PackageInfoRaw> for PackageInfo {
             depends: info.depends,
             opt_depends: info.opt_depends,
             make_depends: info.make_depends,
+            check_depends: info.check_depends,
         }
     }
 }
@@ -78,6 +80,8 @@ pub(crate) struct PackageInfoRaw {
     pub depends: Vec<String>,
     #[serde(default)]
     pub opt_depends: Vec<String>,
+    #[serde(default)]
+    pub check_depends: Vec<String>,
     #[serde(default)]
     pub make_depends: Vec<String>,
     pub description: Option<String>,
