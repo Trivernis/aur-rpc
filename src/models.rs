@@ -69,7 +69,7 @@ impl From<PackageInfoRaw> for PackageInfo {
     }
 }
 
-/// Full packge info with all fields as a workaround
+/// Full package info with all fields as a workaround
 /// as serde doesn't support aliases in flattened structs
 #[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
@@ -116,7 +116,7 @@ pub(crate) struct AURResponse<T> {
     pub error: Option<String>,
 }
 
-/// Represents the type of aur response
+/// Represents the type of AUR response
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
 pub(crate) enum ResponseType {

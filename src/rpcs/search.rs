@@ -30,13 +30,13 @@ pub enum SearchField {
     NameDesc,
     /// Searches by package maintainer
     Maintainer,
-    /// Searches for packages that depend on the given keywods
+    /// Searches for packages that depend on the given keywords
     Depends,
     /// Searches for packages that require the given keywords to be build
     MakeDepends,
-    /// Searches for packages that optionally depend on the given keywods
+    /// Searches for packages that optionally depend on the given keywords
     OptDepends,
-    /// Searches for packages that require the given keywods to be present
+    /// Searches for packages that require the given keywords to be present
     CheckDepends,
 }
 
