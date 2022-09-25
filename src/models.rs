@@ -37,6 +37,7 @@ pub struct PackageInfo {
     pub depends: Vec<String>,
     pub make_depends: Vec<String>,
     pub opt_depends: Vec<String>,
+    pub check_depends: Vec<String>
 }
 
 impl From<PackageInfoRaw> for PackageInfo {
@@ -63,11 +64,12 @@ impl From<PackageInfoRaw> for PackageInfo {
             depends: info.depends,
             opt_depends: info.opt_depends,
             make_depends: info.make_depends,
+            check_depends: info.check_depends,
         }
     }
 }
 
-/// Full packge info with all fields as a workaround
+/// Full package info with all fields as a workaround
 /// as serde doesn't support aliases in flattened structs
 #[derive(Clone, Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
@@ -78,6 +80,8 @@ pub(crate) struct PackageInfoRaw {
     pub depends: Vec<String>,
     #[serde(default)]
     pub opt_depends: Vec<String>,
+    #[serde(default)]
+    pub check_depends: Vec<String>,
     #[serde(default)]
     pub make_depends: Vec<String>,
     pub description: Option<String>,
@@ -112,7 +116,7 @@ pub(crate) struct AURResponse<T> {
     pub error: Option<String>,
 }
 
-/// Represents the type of aur response
+/// Represents the type of AUR response
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
 pub(crate) enum ResponseType {
