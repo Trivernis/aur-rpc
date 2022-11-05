@@ -8,7 +8,7 @@ async fn it_searches_by_name() {
 
 #[tokio::test]
 async fn it_searches_by_maintainer() {
-    let packages = search_by(SearchField::Maintainer, "trivernis")
+    let packages = search_by(SearchField::Maintainer, "wcasanova")
         .await
         .unwrap();
     assert!(packages.len() > 0)
