@@ -1,6 +1,6 @@
 [package]
 name = "aur-rpc"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 description = "An async wrapper for aur RPC calls"
 authors = ["trivernis <trivernis@pm.me>"]
@@ -11,7 +11,7 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-reqwest = { version = "0.11.11", features = ["json"] }
+reqwest = { version = "0.11.11", features = ["json", "rustls-tls"], default-features = false }
 serde = { version = "1.0.139", features = ["derive"] }
 thiserror = "1.0.31"
 tracing = "0.1.35"
